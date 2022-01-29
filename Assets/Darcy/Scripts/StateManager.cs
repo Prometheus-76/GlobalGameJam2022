@@ -5,6 +5,9 @@ using UnityEngine;
 public class StateManager : MonoBehaviour
 {
     public bool isDayTime = true;
+    public Color dayLightingColour;
+    public Color nightLightingColour;
+
     private List<Switchable> switchableObjects;
     private List<GameObject> dayObjects;
     private List<GameObject> nightObjects;
@@ -76,6 +79,8 @@ public class StateManager : MonoBehaviour
         {
             g.SetActive(!isDayTime);
         }
+
+        RenderSettings.ambientLight = (isDayTime ? dayLightingColour : nightLightingColour);
     }
 
     #region Input System
