@@ -278,6 +278,17 @@
                 },
                 {
                     "name": "",
+                    "id": "828846a5-90b3-4de5-97a2-039c34f69c96",
+                    "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KBM",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "58c63ba9-f8d9-4d48-bf63-4acd500ebedf",
                     "path": "<Keyboard>/leftShift",
                     "interactions": "",
@@ -294,6 +305,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Controller",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3a56fd02-9a23-4ab8-a3c8-6349a12db529",
+                    "path": "<Keyboard>/k",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KBM",
                     "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
