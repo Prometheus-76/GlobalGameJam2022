@@ -1995,7 +1995,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2968
+  m_VersionIndex: 3040
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3151,7 +3151,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2937
+  m_VersionIndex: 3009
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -5605,6 +5605,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5793473849719356707}
     m_Modifications:
+    - target: {fileID: 1964147986037235439, guid: 9806ab410e2bb964c9884cdf6c7ff562, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1964147986037235439, guid: 9806ab410e2bb964c9884cdf6c7ff562, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1964147986037235439, guid: 9806ab410e2bb964c9884cdf6c7ff562, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3849018468431720803, guid: 9806ab410e2bb964c9884cdf6c7ff562, type: 3}
       propertyPath: m_Name
       value: LargeCrystalSpike
