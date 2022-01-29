@@ -56,8 +56,8 @@ public class DynamicPlatform : Switchable
         if (Physics2D.OverlapBox(transform.position, (boxCollider.size * transform.localScale) - (Vector2.one * 0.1f), transform.rotation.z, playerLayer) == false)
         {
             // On state
-            onModel.SetActive(false);
-            offModel.SetActive(true);
+            onModel.SetActive(true);
+            offModel.SetActive(false);
             boxCollider.enabled = true;
         }
     }    
