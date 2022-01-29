@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class LevelSelectMenu : MonoBehaviour
 {
@@ -63,11 +64,11 @@ public class LevelSelectMenu : MonoBehaviour
                 data = dataConversion.Encrypt(data, (currentLevel + 1) * 2);
                 writer.WriteLine(data);
 
-                data = "0";
+                data = "-1";
                 data = dataConversion.Encrypt(data, (currentLevel + 1) * 3);
                 writer.WriteLine(data);
 
-                data = "0";
+                data = "-1";
                 data = dataConversion.Encrypt(data, (currentLevel + 1) * 4);
                 writer.WriteLine(data);
 
@@ -123,12 +124,26 @@ public class LevelSelectMenu : MonoBehaviour
     public void DisplayLevelInfo(int stageNumber)
     {
         levelNameText.text = "- " + levels[stageNumber].name + " -";
-        levelTimeText.text = "Fastest Time: " + levels[stageNumber].minutes + "m " + levels[stageNumber].seconds + "s";
+        if (levels[stageNumber].minutes != -1 && levels[stageNumber].seconds != -1)
+        {
+            levelTimeText.text = "Fastest Time: " + levels[stageNumber].minutes + "m " + levels[stageNumber].seconds + "s";
+        }
+        else
+        {
+            levelTimeText.text = "No Time Recorded";
+        }
     }
 
     // Load the level when clicked on button
     public void LoadStage(int stageNumber)
     {
-        Debug.Log("Loaded " + stageNumber);
+        StartCoroutine(LoadSceneDelayed(stageNumber));
+    }
+
+    IEnumerator LoadSceneDelayed(int stageNumber)
+    {
+        yield return new WaitForSecondsRealtime(0.7f);
+        SceneManager.LoadScene(stageNumber + 2);
+        yield return null;
     }
 }
