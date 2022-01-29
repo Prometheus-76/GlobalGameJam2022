@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Mat_GravityOffTemplate
-  m_Shader: {fileID: -6465566751694194690, guid: 57c74a29f80a1614ab7282a322d3cc84, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 2a7d7e7e689d9ac4e90b3887e5a3499b, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 6
   m_EnableInstancingVariants: 0
@@ -80,6 +80,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: 39c8bda8ca520de4aa923390e8aa0c61, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_6c4f469aa7f147cdb9ecedfafa7e3c3c_Out_0:
+        m_Texture: {fileID: 2800000, guid: 39c8bda8ca520de4aa923390e8aa0c61, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Texture2DAsset_6fc95ff826944c3480bc0bee7b6143c3_Out_0:
         m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
         m_Scale: {x: 1, y: 1}
@@ -133,7 +137,7 @@ Material:
     - _SrcBlend: 1
     - _Strength: 1
     - _Surface: 0
-    - _Tiling: 0.78
+    - _Tiling: 5.16
     - _Time_Scale: 2.33
     - _UVSec: 0
     - _Wind_Position_Scale: 1
@@ -141,6 +145,7 @@ Material:
     - _X_Offset: 0.515
     - _X_Scale: 1
     - _Y_Offset: 0
+    - _Y_Scale: 1
     - _Y_scale: 1
     - _ZWrite: 1
     m_Colors:
