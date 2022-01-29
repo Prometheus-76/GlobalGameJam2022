@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.IO;
 using TMPro;
@@ -34,6 +35,11 @@ public class LevelManager : MonoBehaviour
 
     private bool menuShown;
 
+    public GameObject exitProgressObject;
+    public Image exitProgressImage;
+    private float exitTimer;
+    private bool exitingStage;
+
     private InputMaster controls;
 
     private void Awake()
@@ -53,6 +59,7 @@ public class LevelManager : MonoBehaviour
         seconds = 0;
         minutes = 0;
         menuShown = false;
+        exitingStage = false;
 
         LoadLevelData();
 
@@ -63,6 +70,25 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (controls.Player.Return.ReadValue<float>() != 0f && exitingStage == false)
+        {
+            exitTimer += Time.deltaTime;
+            if (exitTimer >= 1f)
+            {
+                screenWipe.WipeToCover(0.5f);
+                StartCoroutine(LoadSceneDelayed(1));
+                exitingStage = true;
+            }
+        }
+        else if (exitingStage == false)
+        {
+            exitTimer = 0f;
+        }
+
+        // Update the exiting progress UI
+        exitProgressImage.fillAmount = Mathf.Clamp01(exitTimer / 1f);
+        exitProgressObject.SetActive(exitTimer > 0f);
+
         // Update timer
         if (runTimer)
         {
