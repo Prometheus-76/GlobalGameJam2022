@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5962930684191425782}
   m_Layer: 0
   m_Name: Prefab_LampON
-  m_TagString: Untagged
+  m_TagString: Night
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
