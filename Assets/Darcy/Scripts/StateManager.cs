@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class StateManager : MonoBehaviour
 {
+    public bool isDayTime = true;
     private List<Switchable> switchableObjects;
+    private List<GameObject> dayObjects;
+    private List<GameObject> nightObjects;
 
     private InputMaster controls;
 
@@ -22,12 +25,35 @@ public class StateManager : MonoBehaviour
         {
             switchableObjects.Add(g.GetComponent<Switchable>());
         }
+
+        nightObjects = new List<GameObject>();
+        foreach (GameObject g in GameObject.FindGameObjectsWithTag("Night"))
+        {
+            nightObjects.Add(g);
+        }
+
+        dayObjects = new List<GameObject>();
+        foreach (GameObject g in GameObject.FindGameObjectsWithTag("Day"))
+        {
+            dayObjects.Add(g);
+        }
+
+        // Set daytime and nighttime objects on/off at the start of the level
+        foreach (GameObject g in dayObjects)
+        {
+            g.SetActive(isDayTime);
+        }
+
+        foreach (GameObject g in nightObjects)
+        {
+            g.SetActive(!isDayTime);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (controls.Player.Interact.triggered)
+        if (controls.Player.Switch.triggered)
         {
             ChangeAllStates();
         }
@@ -35,9 +61,20 @@ public class StateManager : MonoBehaviour
 
     void ChangeAllStates()
     {
+        isDayTime = !isDayTime;
         for (int i = 0; i < switchableObjects.Count; i++)
         {
             switchableObjects[i].ChangeState();
+        }
+
+        foreach (GameObject g in dayObjects)
+        {
+            g.SetActive(isDayTime);
+        }
+
+        foreach (GameObject g in nightObjects)
+        {
+            g.SetActive(!isDayTime);
         }
     }
 
