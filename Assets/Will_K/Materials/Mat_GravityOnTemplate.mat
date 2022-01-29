@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Mat_GravityOnTemplate
-  m_Shader: {fileID: -6465566751694194690, guid: a72efc7d1f07afb48ac5d60a81d1ffce, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 7426d25a88e4ecf4ab2821de389befee, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 6
   m_EnableInstancingVariants: 0
@@ -84,6 +84,10 @@ Material:
         m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_d5751340eebf48648f2b9ffca6e8ce3d_Out_0:
+        m_Texture: {fileID: 2800000, guid: 39c8bda8ca520de4aa923390e8aa0c61, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -134,19 +138,20 @@ Material:
     - _Strength: 1
     - _Surface: 0
     - _Tiling: 1
-    - _Time_Scale: 2.33
+    - _Time_Scale: 1
     - _UVSec: 0
     - _Wind_Position_Scale: 1
     - _WorkflowMode: 1
     - _X_Offset: 0.515
-    - _X_Scale: 0.57
+    - _X_Scale: 1
     - _Y_Offset: 0
+    - _Y_Scale: 1
     - _Y_scale: 1
     - _ZWrite: 1
     m_Colors:
     - _Arrow_Color: {r: 0.8932953, g: 0, b: 1, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.6706258, g: 0.35999995, b: 0.9, a: 1}
     - _Direction: {r: 0, g: 1, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Fresnel_Color: {r: 1, g: 0, b: 0.8291087, a: 0}

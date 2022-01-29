@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class DynamicGravity : Switchable
 {
-    public Color onColour;
-    public Color offColour;
-
-    private SpriteRenderer spriteRenderer;
+    public GameObject onModel;
+    public GameObject offModel;
 
     // Start is called before the first frame update
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-
         UpdateState();
     }
 
@@ -29,14 +25,14 @@ public class DynamicGravity : Switchable
         if (activated)
         {
             // On state
-            spriteRenderer.color = onColour;
-            spriteRenderer.sortingLayerName = "Default";
+            onModel.SetActive(true);
+            offModel.SetActive(false);
         }
         else
         {
             // Off state
-            spriteRenderer.color = offColour;
-            spriteRenderer.sortingLayerName = "Background";
+            onModel.SetActive(false);
+            offModel.SetActive(true);
         }
     }
 }

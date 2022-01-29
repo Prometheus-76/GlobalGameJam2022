@@ -5,18 +5,16 @@ using UnityEngine.Rendering.Universal;
 
 public class DynamicPlatform : Switchable
 {
-    public Color onColour;
-    public Color offColour;
+    public GameObject onModel;
+    public GameObject offModel;
 
     public LayerMask playerLayer;
 
-    private SpriteRenderer spriteRenderer;
     private BoxCollider2D boxCollider;
 
     // Start is called before the first frame update
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
         boxCollider = GetComponent<BoxCollider2D>();
 
         UpdateState();
@@ -47,8 +45,8 @@ public class DynamicPlatform : Switchable
         else
         {
             // Off state
-            spriteRenderer.color = offColour;
-            spriteRenderer.sortingLayerName = "Background";
+            onModel.SetActive(false);
+            offModel.SetActive(true);
             boxCollider.enabled = false;
         }
     }
@@ -58,8 +56,8 @@ public class DynamicPlatform : Switchable
         if (Physics2D.OverlapBox(transform.position, (boxCollider.size * transform.localScale) - (Vector2.one * 0.1f), transform.rotation.z, playerLayer) == false)
         {
             // On state
-            spriteRenderer.color = onColour;
-            spriteRenderer.sortingLayerName = "Default";
+            onModel.SetActive(true);
+            offModel.SetActive(false);
             boxCollider.enabled = true;
         }
     }    
