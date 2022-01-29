@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask platformLayer;
     public LayerMask obstacleLayer;
     public LayerMask gravityLayer;
+    public LayerMask goalLayer;
 
     [Header("Gravity")]
     [Range(0f, 50f)] public float gravityAcceleration = 40f;
@@ -39,6 +40,9 @@ public class PlayerMovement : MonoBehaviour
     [Header("Wall Slide")]
     [Range(1f, 25f)] public float wallSlideSpeedMaximum = 4f;
 
+    [Header("Components")]
+    public LevelManager levelManager;
+    public GameObject playerModel;
     private Transform playerTransform;
     private Rigidbody2D playerRigidbody;
     private EdgeCollider2D playerCollider;
@@ -60,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 inputVector;
     private bool jumpInputQueued;
     private bool jumpInputHeld;
+    private bool interactInputHeld;
     private bool canJump;
     private bool isJumping;
     private bool applyingGravity;
@@ -72,6 +77,7 @@ public class PlayerMovement : MonoBehaviour
     private Queue<bool> groundContactBuffer;
     private Queue<bool> jumpInputBuffer;
     private Queue<bool> wallContactBuffer;
+    private bool inGameplay;
 
     #endregion
 
@@ -107,11 +113,13 @@ public class PlayerMovement : MonoBehaviour
         inputVector = Vector2.zero;
         jumpInputQueued = false;
         jumpInputHeld = false;
+        interactInputHeld = false;
         canJump = true;
         isJumping = false;
         applyingGravity = false;
         invertGravity = false;
         lastInvertGravityState = false;
+        inGameplay = true;
     }
 
     // Update is called once per frame
@@ -129,15 +137,17 @@ public class PlayerMovement : MonoBehaviour
         #region Movement Input
 
         // WASD
-        inputVector = controls.Player.Movement.ReadValue<Vector2>();
+        inputVector = (inGameplay ? controls.Player.Movement.ReadValue<Vector2>() : Vector2.zero);
         
         // Space
-        jumpInputHeld = (controls.Player.Jump.ReadValue<float>() != 0f);
-        if (controls.Player.Jump.triggered)
+        jumpInputHeld = (inGameplay ? controls.Player.Jump.ReadValue<float>() != 0f : false);
+        if (inGameplay && controls.Player.Jump.triggered)
         {
             // On initial press
             jumpInputQueued = true;
         }
+
+        interactInputHeld = (inGameplay ? controls.Player.Interact.ReadValue<float>() != 0f : false);
 
         #endregion
     }
@@ -306,6 +316,19 @@ public class PlayerMovement : MonoBehaviour
         if (Physics2D.OverlapBox(playerTransform.position + (Vector3.up * hitboxSize.y * 0.5f), hitboxSize, 0f, obstacleLayer))
         {
             TakeDamage();
+        }
+
+        #endregion
+
+        #region Goal Contact
+
+        if (isGrounded && interactInputHeld && Physics2D.OverlapBox(playerTransform.position + (Vector3.up * hitboxSize.y * 0.5f), hitboxSize, 0f, goalLayer))
+        {
+            if (inGameplay)
+            {
+                inGameplay = false;
+                levelManager.EndLevel();
+            }
         }
 
         #endregion
@@ -489,7 +512,18 @@ public class PlayerMovement : MonoBehaviour
 
     void TakeDamage()
     {
+        if (inGameplay == false)
+            return;
 
+        inGameplay = false;
+
+        // Death effect
+        // Player visuals off
+        playerModel.SetActive(false);
+
+        // Transition out
+        // Reload level
+        levelManager.Invoke("ReloadLevel", 0.3f);
     }
 
     #region Ground Contact
