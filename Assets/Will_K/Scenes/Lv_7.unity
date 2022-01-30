@@ -884,8 +884,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 1
-  onColour: {r: 1, g: 0.41837823, b: 0.39999998, a: 1}
-  offColour: {r: 0.85, g: 0.85, b: 0.85, a: 1}
+  onModel: {fileID: 0}
+  offModel: {fileID: 0}
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -1656,8 +1656,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 0
-  onColour: {r: 0.7529412, g: 0.4, b: 1, a: 1}
-  offColour: {r: 0.39999998, g: 1, b: 0.5103535, a: 1}
+  onModel: {fileID: 0}
+  offModel: {fileID: 0}
 --- !u!61 &677450014
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2237,8 +2237,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 0
-  onColour: {r: 1, g: 0.41837823, b: 0.39999998, a: 1}
-  offColour: {r: 0.85, g: 0.85, b: 0.85, a: 1}
+  onModel: {fileID: 0}
+  offModel: {fileID: 0}
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -2564,8 +2564,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 1
-  onColour: {r: 1, g: 0.41837823, b: 0.39999998, a: 1}
-  offColour: {r: 0.85, g: 0.85, b: 0.85, a: 1}
+  onModel: {fileID: 0}
+  offModel: {fileID: 0}
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -3983,8 +3983,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 1
-  onColour: {r: 0.7529412, g: 0.4, b: 1, a: 1}
-  offColour: {r: 0.39999998, g: 1, b: 0.5103535, a: 1}
+  onModel: {fileID: 0}
+  offModel: {fileID: 0}
 --- !u!61 &1500637978
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5644,8 +5644,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 0
-  onColour: {r: 1, g: 0.41837823, b: 0.39999998, a: 1}
-  offColour: {r: 0.85, g: 0.85, b: 0.85, a: 1}
+  onModel: {fileID: 0}
+  offModel: {fileID: 0}
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -12775,6 +12775,8 @@ MonoBehaviour:
   levelCompleteUI: {fileID: 4837152802052668457}
   nextStagePrompt: {fileID: 4837152800577327688}
   screenWipe: {fileID: 162198276}
+  exitProgressObject: {fileID: 0}
+  exitProgressImage: {fileID: 0}
 --- !u!1 &4837152802636841405
 GameObject:
   m_ObjectHideFlags: 0
@@ -12806,6 +12808,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDayTime: 1
+  dayLightingColour: {r: 0, g: 0, b: 0, a: 0}
+  nightLightingColour: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &4837152802636841407
 Transform:
   m_ObjectHideFlags: 0
