@@ -117,16 +117,16 @@ public class LevelManager : MonoBehaviour
 
         while (currentLevel < SceneManager.sceneCountInBuildSettings - 2)
         {
-            if (File.Exists("LevelData/lv" + currentLevelNumber + ".lsf"))
+            if (File.Exists("LevelData/lv" + currentLevel + ".lsf"))
             {
                 StreamReader reader = new StreamReader("LevelData/lv" + currentLevel + ".lsf");
 
                 // Read the data
-                levels[currentLevelNumber].number = int.Parse(dataConversion.Decrypt(reader.ReadLine(), (currentLevelNumber + 1)));
-                levels[currentLevelNumber].completed = (dataConversion.Decrypt(reader.ReadLine(), (currentLevelNumber + 1) * 2) == "true" ? true : false);
-                levels[currentLevelNumber].minutes = int.Parse(dataConversion.Decrypt(reader.ReadLine(), (currentLevelNumber + 1) * 3));
-                levels[currentLevelNumber].seconds = int.Parse(dataConversion.Decrypt(reader.ReadLine(), (currentLevelNumber + 1) * 4));
-                levels[currentLevelNumber].name = dataConversion.Decrypt(reader.ReadLine(), (currentLevelNumber + 1) * 5);
+                levels[currentLevel].number = int.Parse(dataConversion.Decrypt(reader.ReadLine(), (currentLevel + 1)));
+                levels[currentLevel].completed = (dataConversion.Decrypt(reader.ReadLine(), (currentLevel + 1) * 2) == "true" ? true : false);
+                levels[currentLevel].minutes = int.Parse(dataConversion.Decrypt(reader.ReadLine(), (currentLevel + 1) * 3));
+                levels[currentLevel].seconds = int.Parse(dataConversion.Decrypt(reader.ReadLine(), (currentLevel + 1) * 4));
+                levels[currentLevel].name = dataConversion.Decrypt(reader.ReadLine(), (currentLevel + 1) * 5);
 
                 reader.Close();
                 reader.Dispose();
