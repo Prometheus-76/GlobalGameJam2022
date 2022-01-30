@@ -3558,7 +3558,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '- - - - -'
+  m_text: '
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ea08396bf829e5849a0337f8225b9f6c, type: 2}
   m_sharedMaterial: {fileID: 1782936769745198831, guid: ea08396bf829e5849a0337f8225b9f6c, type: 2}
@@ -4610,21 +4612,21 @@ MonoBehaviour:
   - {fileID: 252567834}
   - {fileID: 317886654}
   levelNames:
-  - One
-  - Two
-  - Three
-  - Four
-  - Five
-  - Six
-  - Seven
-  - Eight
-  - Nine
-  - Ten
-  - Eleven
-  - Twelve
-  - Thirteen
-  - Fourteen
-  - Fifteen
+  - First Steps
+  - Up and Up
+  - Hopscotch
+  - Spikes and Ladders
+  - Judgement
+  - Claustrophobia
+  - Ceiling Cling
+  - Triple Bump
+  - Mountain Climber
+  - Containment
+  - Gravity Dance
+  - Unphaseable
+  - Two Steps Forward
+  - The Drop
+  - ChronoSwitch
   levelNameText: {fileID: 1080001060}
   levelTimeText: {fileID: 1957600456}
   completionText: {fileID: 440817206}
@@ -5062,7 +5064,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '- - - - -'
+  m_text: '
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ea08396bf829e5849a0337f8225b9f6c, type: 2}
   m_sharedMaterial: {fileID: 1782936769745198831, guid: ea08396bf829e5849a0337f8225b9f6c, type: 2}
