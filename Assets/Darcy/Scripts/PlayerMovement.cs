@@ -322,7 +322,7 @@ public class PlayerMovement : MonoBehaviour
 
         #region Goal Contact
 
-        if (isGrounded && interactInputHeld && Physics2D.OverlapBox(playerTransform.position + (Vector3.up * hitboxSize.y * 0.5f), hitboxSize, 0f, goalLayer))
+        if (isGrounded && Physics2D.OverlapBox(playerTransform.position + (Vector3.up * hitboxSize.y * 0.5f), hitboxSize, 0f, goalLayer))
         {
             if (inGameplay)
             {
