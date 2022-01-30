@@ -53,10 +53,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Will_K/Scenes/Lv_10.unity
     guid: b78ef7ce1a2f7154084744433aca58f3
-  - enabled: 1
-    path: Assets/Darcy/Scenes/TestScene.unity
-    guid: 01954293abdac2841ba028d4220c911b
-  - enabled: 1
-    path: Assets/Darcy/Scenes/Levels/Template.unity
-    guid: a74a34eda5ce670488ff277cc83ba4e6
   m_configObjects: {}
