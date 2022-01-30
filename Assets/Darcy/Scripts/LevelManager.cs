@@ -53,7 +53,7 @@ public class LevelManager : MonoBehaviour
         // The current level number (0 is the first one)
         runTimer = true;
         currentLevelNumber = SceneManager.GetActiveScene().buildIndex - 2;
-        levels = new LevelData[SceneManager.sceneCountInBuildSettings - 1];
+        levels = new LevelData[SceneManager.sceneCountInBuildSettings - 2];
         dataConversion = new DataConversion();
         levelTimer = 0f;
         seconds = 0;
